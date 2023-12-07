@@ -1,41 +1,47 @@
-/* 
-Consegna:
-Dato un array contenente una lista di cinque immagini, 
-creare un carosello come nello screenshot allegato.
+const myImg1 = document.createElement('img');
+myImg1.classList.add ('w-100', 'd-block', 'h-100', 'obj-cover', 'mx-3');
+myImg1.src = 'img/01.webp';
 
---MILESTONE 1 -----OK
-Per prima cosa, creiamo il markup statico: costruiamo il container e 
-inseriamo un'immagine grande al centro: avremo così la struttura base e gli stili 
-pronti per poterci poi concentrare solamente sull'aspetto logico.
+const myImg2 = document.createElement('img');
+myImg2.classList.add ('w-100', 'd-none', 'h-100', 'obj-cover', 'mx-3');
+myImg2.src = 'img/02.webp';
 
---MILESTONE 2
-Adesso rimuoviamo tutto il markup statico e inseriamo tutte le immagini 
-dinamicamente servendoci dell'array fornito e un semplice ciclo for che 
-concatena un template literal. Tutte le immagini saranno nascoste, 
-tranne la prima, che avrà una classe specifica che la renderà visibile.
-Al termine di questa fase ci ritroveremo con lo stesso slider stilato 
-nella milestone 1, ma costruito dinamicamente attraverso JavaScript.
+const myImg3 = document.createElement('img');
+myImg3.classList.add ('w-100', 'd-none', 'h-100', 'obj-cover', 'mx-3');
+myImg3.src = 'img/03.webp';
 
---MILESTONE 3
-Al click dell'utente sulle frecce, il programma cambierà l'immagine attiva, 
-che quindi verrà visualizzata al posto della precedente.
-Prima di partire a scrivere codice: Non lasciamoci spaventare dalla 
-complessità apparente dell'esercizio, ma analizziamo prima, 
-come abbiamo fatto sempre, cosa ci potrebbe aspettare. 
-Abbiamo completato ormai da qualche giorno la sessione HTML e CSS, 
-se non ci ricordiamo qualcosa andiamo pure a riguardare alcuni argomenti. 
-Non dedichiamo però al ripasso più di una mezz'ora, così da non perdere 
-di vista il focus dell'esercizio.
+const myImg4 = document.createElement('img');
+myImg4.classList.add ('w-100', 'd-none', 'h-100', 'obj-cover', 'mx-3');
+myImg4.src = 'img/04.webp';
 
-Consigli del giorno:
-1. Costruiamo del carosello una versione statica contenente solamente un'immagine. 
-Di questa versione statica al momento opportuno commenteremo (oscureremo) 
-alcuni elementi per poterli riprodurre dinamicamente in js. Potremo quindi usarli 
-come "template".
+const myImg5 = document.createElement('img');
+myImg5.classList.add ('w-100', 'd-none', 'h-100', 'obj-cover', 'mx-3');
+myImg5.src = 'img/05.webp';
 
-2. Scriviamo sempre prima per punti il nostro algoritmo in italiano 
-per capire cosa vogliamo fare
 
-3. Al momento giusto (ihihhi starà a voi capire quale) rispondete a 
-questa domanda: "Quanti cicli servono?"
-*/
+// Array contentene immagini
+const myImages = [myImg1, myImg2, myImg3, myImg4, myImg5];
+
+console.log(myImages, typeof myImages);
+
+for(let i = 0; i < myImages.length; i++){
+    document.querySelector('.img-container').append(myImages[i]);
+
+}
+
+//Dichiarazioni bottoni 
+
+const lefttButton = document.getElementById('left-button');
+const rightButton = document.getElementById('left-button');
+
+// PROSSIMO STEP -- Creare contatore (linkato agli  indici dell'array) 
+// che sale e scende
+
+rightButton.addEventListener('click', function(){
+    for (let i = 0; i < myImages.length; i++){
+        console.log (myImages[i]);
+    }
+})
+
+
+
