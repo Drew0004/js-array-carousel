@@ -12,6 +12,34 @@
     general 
 */
 
+.w-rectangle{
+    width: 700px;
+}
+.h-rectangle{
+    height: 500px;
+
+}
+
+.h-100{
+    height: 100%;
+}
+
+.h-100vh{
+    height: 100vh;
+}
+
+.obj-cover{
+    object-fit: cover;
+    object-position: center;
+}
+
+.circle-button{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
 /* 
     header 
 */
