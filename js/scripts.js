@@ -20,12 +20,6 @@
 
 const myContainer = document.querySelector('.img-container');
 
-
-
-
-
-
-
 // Array contentene immagini
 // const myImages = [myImg1, myImg2, myImg3, myImg4, myImg5];
 const myImages = [
@@ -57,11 +51,13 @@ rightButton.addEventListener('click', function(){
 
         counter ++
         console.log(counter);
-        
-        myContainer.innerHTML= myImages[counter];
        
     }
+    else{
+        counter = 0;
+    }
 
+    myContainer.innerHTML= myImages[counter];
 })
 
 lefttButton.addEventListener('click', function(){
@@ -71,9 +67,13 @@ lefttButton.addEventListener('click', function(){
         counter --
         console.log(counter);
         
-        myContainer.innerHTML= myImages[counter];
        
     }
+    else{
+        counter = myImages.length -1;
+    }
+
+    myContainer.innerHTML= myImages[counter];
 })
 
 
