@@ -1,8 +1,8 @@
+//Dichiarati contenitori elementi
 const myContainer = document.querySelector('.img-container');
 const myThumbnail = document.querySelector('.thumbnail');
 
-// Array contentene immagini
-// const myImages = [myImg1, myImg2, myImg3, myImg4, myImg5];
+// Array contentene immagini carosello 
 const myImages = [
     `<img id="img-1" class="w-100 h-100 obj-cover mx-3" src="img/01.webp" alt="Immagine 1">`,
     `<img id="img-2" class="w-100 h-100 obj-cover mx-3" src="img/02.webp" alt="Immagine 2">`,
@@ -13,17 +13,14 @@ const myImages = [
 
 console.log(myImages, typeof myImages);
 
-
-
 // Stampa dell'array
-
 myContainer.innerHTML = myImages[0];
 
 //Dichiarazioni bottoni 
-
 const lefttButton = document.getElementById('left-button');
 const rightButton = document.getElementById('right-button');
 
+// Dichiarazione costani elementi html immagini thumbnail
 const myImg1 = document.createElement('img');
 myImg1.classList.add('d-block', 'w-100', 'h-100', 'obj-cover', 'px-2', 'rounded-5');
 myImg1.src = 'img/01.webp';
@@ -44,12 +41,14 @@ const myImg5 = document.createElement('img');
 myImg5.classList.add('d-block', 'w-100', 'h-100', 'obj-cover', 'px-2', 'rounded-5');
 myImg5.src = 'img/05.webp';
 
+// Array immagini thumbnail
 const myImgThumbnail = [myImg1, myImg2, myImg3, myImg4, myImg5];
 
 // PROSSIMO STEP -- Creare contatore (linkato agli  indici dell'array) 
 // che sale e scende
 let counter = 0;
 
+// Creati eventi bottoni
 rightButton.addEventListener('click', function(){
 
     if (counter < myImages.length-1){
@@ -81,7 +80,7 @@ lefttButton.addEventListener('click', function(){
     myContainer.innerHTML= myImages[counter];
 })
 
-
+// Creato ciclo che stampa e modifica immagini al click
 for(let i = 0; i < myImgThumbnail.length; i++){
     let buttonThumbnail = document.createElement('a');
     buttonThumbnail.append(myImgThumbnail[i]);
