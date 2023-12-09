@@ -1,24 +1,5 @@
-// const myImg1 = document.createElement('img');
-// myImg1.classList.add ('w-100','h-100', 'obj-cover', 'mx-3');
-// myImg1.src = 'img/01.webp';
-
-// const myImg2 = document.createElement('img');
-// myImg2.classList.add ('w-100','h-100', 'obj-cover', 'mx-3');
-// myImg2.src = 'img/02.webp';
-
-// const myImg3 = document.createElement('img');
-// myImg3.classList.add ('w-100','h-100', 'obj-cover', 'mx-3');
-// myImg3.src = 'img/03.webp';
-
-// const myImg4 = document.createElement('img');
-// myImg4.classList.add ('w-100','h-100', 'obj-cover', 'mx-3');
-// myImg4.src = 'img/04.webp';
-
-// const myImg5 = document.createElement('img');
-// myImg5.classList.add ('w-100','h-100', 'obj-cover', 'mx-3');
-// myImg5.src = 'img/05.webp';
-
 const myContainer = document.querySelector('.img-container');
+const myThumbnail = document.querySelector('.thumbnail');
 
 // Array contentene immagini
 // const myImages = [myImg1, myImg2, myImg3, myImg4, myImg5];
@@ -32,6 +13,8 @@ const myImages = [
 
 console.log(myImages, typeof myImages);
 
+
+
 // Stampa dell'array
 
 myContainer.innerHTML = myImages[0];
@@ -40,6 +23,28 @@ myContainer.innerHTML = myImages[0];
 
 const lefttButton = document.getElementById('left-button');
 const rightButton = document.getElementById('right-button');
+
+const myImg1 = document.createElement('img');
+myImg1.classList.add('d-block', 'w-100', 'h-100', 'obj-cover', 'px-2', 'rounded-5');
+myImg1.src = 'img/01.webp';
+
+const myImg2 = document.createElement('img');
+myImg2.classList.add('d-block', 'w-100', 'h-100', 'obj-cover', 'px-2', 'rounded-5');
+myImg2.src = 'img/02.webp';
+
+const myImg3 = document.createElement('img');
+myImg3.classList.add('d-block', 'w-100', 'h-100', 'obj-cover', 'px-2', 'rounded-5');
+myImg3.src = 'img/03.webp';
+
+const myImg4 = document.createElement('img');
+myImg4.classList.add('d-block', 'w-100', 'h-100', 'obj-cover', 'px-2', 'rounded-5');
+myImg4.src = 'img/04.webp';
+
+const myImg5 = document.createElement('img');
+myImg5.classList.add('d-block', 'w-100', 'h-100', 'obj-cover', 'px-2', 'rounded-5');
+myImg5.src = 'img/05.webp';
+
+const myImgThumbnail = [myImg1, myImg2, myImg3, myImg4, myImg5];
 
 // PROSSIMO STEP -- Creare contatore (linkato agli  indici dell'array) 
 // che sale e scende
@@ -75,6 +80,18 @@ lefttButton.addEventListener('click', function(){
 
     myContainer.innerHTML= myImages[counter];
 })
+
+
+for(let i = 0; i < myImgThumbnail.length; i++){
+    let buttonThumbnail = document.createElement('a');
+    buttonThumbnail.append(myImgThumbnail[i]);
+
+    myThumbnail.append(buttonThumbnail);
+
+    myImgThumbnail[i].addEventListener('click', function(){
+        myContainer.innerHTML = (myImages[i]);
+    })
+}
 
 
 

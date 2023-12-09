@@ -40,6 +40,19 @@
     vertical-align: middle;
 }
 
+
+.thumbnail{
+    height: 100px;
+}
+
+.thumbnail > a{
+    cursor: pointer;
+    display: block;
+    width: 200px;
+    text-decoration: none;
+}
+
+
 /* 
     header 
 */
