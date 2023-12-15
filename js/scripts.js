@@ -19,6 +19,7 @@ myContainer.innerHTML = myImages[0];
 //Dichiarazioni bottoni 
 const lefttButton = document.getElementById('left-button');
 const rightButton = document.getElementById('right-button');
+const stopButton = document.getElementById('stop-button');
 
 // Dichiarazione costani elementi html immagini thumbnail
 const myImg1 = document.createElement('img');
@@ -49,6 +50,8 @@ const myImgThumbnail = [myImg1, myImg2, myImg3, myImg4, myImg5];
 let counter = 0;
 
 // intervallo automatico avanti
+
+
 function stampPic(){
     if (counter < myImages.length-1){
 
@@ -63,7 +66,12 @@ function stampPic(){
     myContainer.innerHTML= myImages[counter];
 }
 
-setInterval(stampPic,3000);
+let clock = setInterval(stampPic,3000);
+
+// evento stop bottone
+stopButton.addEventListener('click', function(){
+    clearInterval(clock);
+})
 
 
 // Creati eventi bottoni
