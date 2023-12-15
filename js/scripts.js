@@ -68,6 +68,7 @@ function stampPic(){
 
 let clock = setInterval(stampPic,3000);
 
+
 // evento stop bottone
 stopButton.addEventListener('click', function(){
     clearInterval(clock);
