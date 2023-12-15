@@ -48,6 +48,24 @@ const myImgThumbnail = [myImg1, myImg2, myImg3, myImg4, myImg5];
 // che sale e scende
 let counter = 0;
 
+// intervallo automatico avanti
+function stampPic(){
+    if (counter < myImages.length-1){
+
+        counter ++
+        console.log(counter);
+       
+    }
+    else{
+        counter = 0;
+    }
+
+    myContainer.innerHTML= myImages[counter];
+}
+
+setInterval(stampPic,3000);
+
+
 // Creati eventi bottoni
 rightButton.addEventListener('click', function(){
 
